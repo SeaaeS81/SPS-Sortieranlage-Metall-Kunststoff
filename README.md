@@ -4,7 +4,8 @@
 Dieses Projekt realisiert eine automatisierte Sortieranlage für Metall- und Kunststoffbauteile in TIA Portal. Die Anlage erkennt Metallteile über einen induktiven Sensor und schiebt sie mit einem Zylinder in ein Magazin. Kunststoffteile werden bis zum Bandende transportiert und dort aussortiert.
 
 ## Dokumentation
-Eine vollständige Projektdokumentation (inkl. Tests und Erklärungen) wird in Kürze als PDF hinzugefügt.
+Eine vollständige Projektdokumentation (inkl. Tests und Erklärungen) finden Sie hier: 
+👉 [Projektdokumentation_Sortieranlage_Metall_Kunststoff.pdf](Projektdokumentation_Sortieranlage_Metall_Kunststoff.pdf)
 
 ## Verwendete Hardware / Software
 * **Software:** TIA Portal V19 (Trial), S7-PLCSIM V19
@@ -53,8 +54,15 @@ Das Metallteil wird erkannt, der Merker gesetzt und der Zylinder fährt aus.
 ![Test Metall](10_test_metall.jpg)
 
 ### Test 2: Kunststoffteil
-Das Kunststoffteil wird nicht als Metall erkannt (Merker = 0). Am Bandende stoppt das Band.
-![Test Kunststoff](11_test_plastik.jpg)
+Das Kunststoffteil wird nicht als Metall erkannt (Merker = 0). 
+
+**Zustand vor dem Bandende (Band läuft):**
+Die Start-Taste wurde losgelassen (S_Start = 0), aber das Band läuft weiter (M_Band = 1).
+![Test Kunststoff vorher](11_test_plastik_vorher.jpg)
+
+**Zustand am Bandende (Band stoppt):**
+Sobald der Sensor am Bandende (B_Ende = 1) das Teil erkennt, stoppt das Band (M_Band = 0).
+![Test Kunststoff nachher](12_test_plastik_nachher.jpg)
 
 ## Autor
 Yevhen Samoilenko
